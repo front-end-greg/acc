@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>RED PLANET</title>
+
+    <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&display=swap" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.js"></script>
+    <script src="js/skrollr.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #000;
+            font-family: 'Oswald', sans-serif;
+            color: #fff;
+        }
+
+        section {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        nav {
+
+            position: fixed;
+            right: 0;
+            top: 50%;
+            height: 202px;
+            margin-top: -101px;
+            opacity: .63;
+            z-index: 3;
+
+        }
+
+        nav li {
+            width: 10px;
+            height: 10px;
+            list-style: none;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            margin: 2em;
+            cursor: pointer;
+        }
+
+        nav li.active {
+            background: #fff;
+        }
+
+        /* SCREEN 1 */
+
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            color: coral;
+            position: absolute;
+            top: 101px;
+            width: 100%;
+            letter-spacing: -20.0375px;
+        }
+
+        .light {
+            background: radial-gradient(closest-side, rgba(255, 255, 251, 1) 0%, rgba(255, 241, 131, 0.66) 25%, rgba(255, 241, 131, 0) 100%);
+            position: absolute;
+            left: 50%;
+
+        }
+
+        #mars {
+            text-align: center;
+            position: absolute;
+            top: 20px;
+            width: 100%;
+        }
+
+        #sun {
+            width: 400px;
+            height: 400px;
+            margin-left: -200px;
+        }
+
+        #shine {
+            width: 20px;
+            height: 20px;
+            margin-left: -10px;
+            top: 190px;
+            opacity: 0;
+        }
+
+        #flare {
+            width: 160px;
+            height: 80px;
+            margin-left: -80px;
+            top: 160px;
+            opacity: 0;
+            background: radial-gradient(closest-side, rgba(255, 255, 251, 1) 9%, rgba(255, 241, 131, 0.6) 24%, rgba(255, 241, 131, 0) 100%);
+        }
+
+
+
+        /* SCREEN 2 */
+
+
+        h2 {
+            font-weight: 200;
+            text-transform: uppercase;
+            margin-bottom: 1em;
+        }
+
+        .info {
+            background-color: rgba(0, 0, 0, .5);
+            position: absolute;
+            width: 25%;
+            padding: 2em;
+            top: 0;
+            bottom: 0;
+            box-sizing: border-box;
+        }
+
+        #screen2 .info {
+            width: 100%;
+            top: 23.7%;
+            bottom: 24.1%;
+            padding-right: 50px;
+        }
+
+        #screen2 {
+            background: url(img/mars-surface.jpg) center center;
+            background-size: cover;
+        }
+
+        #planet {
+            float: left;
+        }
+
+
+
+
+
+        /* SCREEN 3 */
+
+        #screen3 {
+            background: url(img/mars-rocks.jpg) center center;
+            background-size: cover;
+        }
+
+
+        #screen3 .info {
+            right: 0;
+        }
+
+
+        #viking,
+        #r0ver {
+            position: absolute;
+            bottom: 100px;
+            width: 49.8%;
+        }
+
+        #viking {
+            left: 14%;
+        }
+
+        /* SCREEN 4 */
+
+        #screen4 {
+            background: url(img/mars-mountains.jpg) center center;
+            background-size: cover;
+        }
+
+        /* preloader */
+
+        #preloader {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+            z-index: 2;
+            text-align: center;
+        }
+
+        #preloader img {
+            margin-top: 30%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+    </style>
+    <script src="js/html-shiv.js"></script>
+</head>
+
+<body>
+    <div id="preloader"><img src="img/loading-circle.png" /></div>
+
+    <nav>
+        <ul>
+            <li data-screen="#screen1" class="active">
+            <li data-screen="#screen2">
+            <li data-screen="#screen3">
+            <li data-screen="#screen4">
+        </ul>
+
+    </nav>
+
+
+    <section id="screen1">
+        <h1>&nbsp;RED PLANET</h1>
+        <div id="sun" class="light" data-start="transform:translateY(0px)" data--298-top="transform:translateY(-50px)"></div>
+        <p id="mars" data-start="transform:translateY(0px)" data--297-top="transform:translateY(-200px)"> <img src="img/mars-crescent.png" /></p>
+        <div id="flare" class="light" data-start="transform:translateX(0px)" data-1-start="transform:translateX(3000px)"></div>
+        <div id="shine" class="light" data-start="transform:translateX(0px)" data-1-start="transform:translateX(3000px)"></div>
+
+    </section>
+
+
+
+    <section id="screen2">
+
+        <div class="info" data-bottom-top="transform:translateY(251px)" data-top-bottom="transform:translateY(-252px)"><img src="img/mars-full.png" id="planet" data-bottom-top="transform:rotate(30.4deg)" data-top-bottom="transform:rotate(-30.6deg)" />
+            <h2>Exploration of Mars</h2>The exploration of Mars has taken place over hundreds of years, beginning in earnest with the invention and development of the telescope during the 1600s. Increasingly detailed views of the planet from Earth inspired speculation about its environment and possible life &mdash; even intelligent civilizations &mdash; that might be found there. Probes sent from Earth beginning in the late 20th century have yielded a dramatic increase in knowledge about the Martian system, focused primarily on understanding its geology and habitability potential.
+        </div>
+
+    </section>
+
+
+
+
+    <section id="screen3">
+
+        <div class="info" data-200-top="right:-25%" data-top="right:0%">
+            <h2>Viking Landers</h2>The Viking 1 lander touched down on the surface of Mars on July 20, 1976 and was joined by the Viking 2 lander on September 3. The Viking landers conducted biological experiments designed to detect life in the Martian soil, as well as measure temperature, wind, and seismology.
+        </div>
+        <img src="img/viking.png" id="viking" data-anchor-target="#screen3" data-200-top="bottom[sqrt]:108%" data-50-bottom="bottom[sqrt]:11%" />
+    </section>
+
+
+
+
+    <section id="screen4">
+
+        <div class="info" data-200-top="left:-25%" data-top="left:0%">
+            <h2>Mars Rovers</h2>Launched in 2003, Opportunity landed on Mars on January 25, 2004 on the other side of Mars from its twin rover Spirit. With a planned 90-day duration of activity, Opportunity continued gathering data, making scientific observations, and reporting back to Earth for almost 15 years.
+        </div>
+        <img src="img/opportunity.png" id="r0ver" data-300-end="right:-49.8%; bottom: 124px; transform:scale(.455);" data-end="right:5.05%; bottom: 19px; transform:scale(1.1)" />
+    </section>
+
+
+
+    <script>
+        //follow the directions; don't just copy my code!
+
+        var s = skrollr.init({
+            mobileCheck: function() {
+                return false;
+            }
+        });
+        
+
+    </script>
+
+
+
+</body>
+
+</html>
