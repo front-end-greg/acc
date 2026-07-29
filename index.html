@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Using Webtrain</title>
+        <style>body{font-family: sans-serif;
+            margin:1em 3em;
+            }
+            h1, h2{margin-top:1.5em}
+            img{max-width:500px;}
+            main{margin:auto;
+            max-width:900px;}
+            
+            li{margin-bottom:.6em;}
+        </style>
+       
+    </head>
+    <body>
+      <main> <h1>Uploading your website</h1>
+      <p>
+File Transfer Protocol (FTP) is the way you move files from your computer to your webserver. You'll want a dedicated FTP program such as the free <a href="https://cyberduck.io" target="_blank">Cyberduck</a> instead of having to log in to your commercial web hosting account every time you need to edit your site, since you make those edits to the local copy on your computer, then upload the edited file(s).
+</p>
+       <p style="background: #eee; padding: 1.2em; color:#444"> <b>TIP</b>: You may have used Filezilla in your HTML classes, but Cyberduck has a nicer interface and is a tiny bit easier to use. Both programs work essentially the same way, so you can keep using Filezilla if you prefer it.</p>
+        <p>
+When you purchase a hosting plan from a commercial provider, you may receive an email with the FTP address, username and password to log in to your site, or more often, you'll use the same login/password you use to access your hosting account. These will be required by your FTP program to upload files. Reliable, inexpensive hosts include <a id="795082" href="https://bluehost.sjv.io/c/1243009/795082/11352">BlueHost</a><img style="position: absolute; visibility: hidden;" src="https://imp.pxf.io/i/1243009/795082/11352" width="0" height="0" /> and <a href="https://partners.hostgator.com/QD3KY">HostGator. </a><em>GoDaddy is a well-known option, but not recommended, since they charge for features most hosts include for free</em>).
+</p>
+<h2>Uploading files to Webtrain with Cyberduck</h2>
+        <p>
+Once you download and install Cyberduck, open it, and ensure you are looking at the bookmarks list (2nd icon at top left,) then click the "+" at the lower left:</p>
+        <img src="img/cyberduck-bookmark.png" alt="cyberduck UI"/>
+      <p>  In the FTP connection dialog, enter a meaningful nickname for this connection (like "Webtrain" or "ACC"), the server name (webtrain.austincc.edu), and the username/password you received when you started the Web Developer Program (if you lost this info, contact the <a href="mailto:mnouzovs@austincc.edu">Program Coordinator</a>). Make sure the Path is "home/students/<i>username</i>/public_html" (use your actual username):</p>
+         <img src="img/cyberduck-ftp.png" alt="cyberduck connection settings"/>
+          <p>Close this window, and double-click the bookmark you created. This opens your remote files list (the files on Webtrain). Drag files/folders from your computer into this window to upload them to your root website, which is accessible in a browser at <code>webtrain.austincc.edu/~<i>username</i></code>.</p>
+       <h2> Subdirectories</h2>
+<p>You don't need multiple domains for multiple websites. You can isolate different sites in a single web domain simply by putting each in its own folder (a.k.a. subdirectory). Be sure not to use capital letters, spaces, or special characters in your subdirectory names (or ANY file or folder name).</p>
+<p>
+The first time you connect to Webtrain with Cyberduck, you'll find yourself in your root webspace. This space can be accessed with the URL <code>http://webtrain.austincc.edu/~<i>yourUsername</i>/</code>, so you'll want to create an <code>index.html</code> file that's served by default (otherwise Webtrain will redirect to a generic website, which is it's equivalent of a 404 error&mdash;the error a webserver shows when you request a nonexistant file or directory). You may have already created this file in your Beginning HTML class.</p>
+        <p>You'll want to create subdirectories for your different classes (and possibly your Capstone project). Do this by selecting "New folder" from the Actions icon at the top (the cogwheel). <i>Again, don't use spaces, capital letters, or special characters.</i> Then create a bookmark leading directly into that subdomain:</p>
+        <ol><li>Click the Bookmark icon at the top left of Cyberduck.</li>
+            <li>Right-click the original Webtrain bookmark and choose "Duplicate".</li>
+            <li>With the duplicate selected, click the EDIT (pencil) icon at the bottom left.</li>
+            <li>Add the name of your subdirectory to the end of the Path, and change the nickname of this bookmark.</li>
+            <li>Repeat the process for every subdirectory you need*.</li>
+          </ol>
+          <p><i>*you'll want an <code>index.html</code> file in each subdirectory. If a subdirectory is empty, the server will respond with a 404 error. If there are files in the directory but no index.html, Webtrain will show the list of files, but commercial web hosts will show a 403 error, preventing your files from being exposed to the public.</i></p>
+          <p>Now when you want to edit a specific site, just double-click the corresponding bookmark, and you'll never comingle your web files.</p>
+        <p>To upload files from your computer, Double-click the appropriate bookmark, and simply drag files/folders into the Cyberduck window**. </p>
+          <p>If you need to download a file from Webtrain (for example, if you mess up your local copy and want to replace it with the unedited version), just drag the file out of the Cyberduck window to your computer**.</p> 
+              <p>**<b><i>be sure to keep files in the same relative position within your project folder so relative file paths are maintained!</i></b>. Unlike most commercial webhost's file uploader that force you to upload individual files into individual directories, FTP programs like Cyberduck allow you to upload entire folders and maintain the nested file organization inside.</p>
+          <p>&nbsp;</p>
+          </main> 
+    </body>
+</html>
